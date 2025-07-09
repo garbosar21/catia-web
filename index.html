@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CatIA - Consultora Tecnológica</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background-color: #004488;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .lang-select {
+      background-color: white;
+      color: #004488;
+      border: none;
+      padding: 0.5rem;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+    main {
+      padding: 3rem 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+    h1 {
+      color: #004488;
+    }
+    .contact {
+      margin-top: 3rem;
+      padding: 1.5rem;
+      background-color: #ffffff;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+    }
+    footer {
+      margin-top: 4rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div><strong>CatIA</strong> - Consultora Tecnológica</div>
+    <select class="lang-select" onchange="changeLanguage(this.value)">
+      <option value="es">Español</option>
+      <option value="ca">Català</option>
+      <option value="fr">Français</option>
+    </select>
+  </header>
+
+  <main id="content">
+    <h1>Impulsamos tu transformación digital</h1>
+    <p>En <strong>CatIA</strong>, somos una consultora tecnológica especializada en inteligencia artificial, ciencia de datos y automatización de procesos con <code>n8n</code>. Ayudamos a empresas a integrar soluciones inteligentes y eficientes en sus operaciones para aumentar su productividad y competitividad.</p>
+
+    <div class="contact">
+      <h2>Contacto</h2>
+      <p><strong>Email:</strong> contacto@catia.tech</p>
+      <p><strong>Teléfono:</strong> +34 600 123 456</p>
+      <p><strong>Dirección:</strong> Barcelona, España</p>
+    </div>
+  </main>
+
+  <footer>
+    © 2025 CatIA. Todos los derechos reservados.
+  </footer>
+
+  <script>
+    const translations = {
+      ca: {
+        title: 'Impulsem la teva transformació digital',
+        desc: 'A <strong>CatIA</strong>, som una consultora tecnològica especialitzada en intel·ligència artificial, ciència de dades i automatització de processos amb <code>n8n</code>. Ajudem les empreses a integrar solucions intel·ligents i eficients en les seves operacions per augmentar la seva productivitat i competitivitat.',
+        contact: 'Contacte',
+        email: 'Correu electrònic',
+        phone: 'Telèfon',
+        address: 'Adreça'
+      },
+      fr: {
+        title: 'Nous propulsons votre transformation numérique',
+        desc: 'Chez <strong>CatIA</strong>, nous sommes une société de conseil technologique spécialisée en intelligence artificielle, science des données et automatisation des processus avec <code>n8n</code>. Nous aidons les entreprises à intégrer des solutions intelligentes et efficaces dans leurs opérations afin d'accroître leur productivité et leur compétitivité.',
+        contact: 'Contact',
+        email: 'Email',
+        phone: 'Téléphone',
+        address: 'Adresse'
+      },
+      es: {
+        title: 'Impulsamos tu transformación digital',
+        desc: 'En <strong>CatIA</strong>, somos una consultora tecnológica especializada en inteligencia artificial, ciencia de datos y automatización de procesos con <code>n8n</code>. Ayudamos a empresas a integrar soluciones inteligentes y eficientes en sus operaciones para aumentar su productividad y competitividad.',
+        contact: 'Contacto',
+        email: 'Email',
+        phone: 'Teléfono',
+        address: 'Dirección'
+      }
+    };
+
+    function changeLanguage(lang) {
+      document.querySelector('h1').innerText = translations[lang].title;
+      document.querySelector('p').innerHTML = translations[lang].desc;
+      document.querySelector('.contact h2').innerText = translations[lang].contact;
+      const p = document.querySelectorAll('.contact p');
+      p[0].innerHTML = `<strong>${translations[lang].email}:</strong> contacto@catia.tech`;
+      p[1].innerHTML = `<strong>${translations[lang].phone}:</strong> +34 600 123 456`;
+      p[2].innerHTML = `<strong>${translations[lang].address}:</strong> Barcelona, España`;
+    }
+  </script>
+</body>
+</html>
